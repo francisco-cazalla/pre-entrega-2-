@@ -1,0 +1,207 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFEBCD; 
+    text-align: center;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.custom-button {
+    padding: 100px 200px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.custom-butto {
+    padding: 100px 155px;
+    margin-top: 20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+
+.custom-button:hover {
+    background-color: #f3c702; 
+}
+
+.custom-butto:hover {
+    background-color: #f3c702; 
+}
+
+
+#result {
+    margin-top: 20px;
+}
+#result h2 {
+    text-align: center;
+}
+
+.formmulario-prestamo{
+    align-items: center;
+    align-content: center;
+}
+
+.contenedor {
+    align-items: center;
+    background: #ffffff;
+    padding: 120px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 500px;
+    margin-left: 625px;
+    margin-top: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border-color: #a3d8f4;
+    box-shadow: 0 0 5px rgba(163, 216, 244, 0.5);
+    background-color: #ffffff;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #a3d8f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #72b6d8;
+}
+
+form button:active {
+    background-color: #5999b6;
+}
+
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+}
+
+#resultado p {
+    margin: 0;
+    padding: 5px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-left: 400px;
+    margin-right: 800px;
+    margin: 40px;
+
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.task-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.task-input input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.task-input button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-input button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+button.complete-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.complete-btn:hover {
+    background-color: #0056b3;
+}

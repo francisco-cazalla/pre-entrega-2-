@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Precio con IVA y presupuesto</h1>
+    <button class ="custom-button" onclick="numeroIngresado()">Calcular IVA</button>
+    <div>
+        <button class="custom-butto" onclick="calculadoraDePresupuesto()"> calcular presupuesto</button>
+    </div>
+
+    <div class="contenedor">
+        <h1>Simulador de Préstamos</h1>
+        <form id="formulario-prestamo">
+            <label for="monto">Monto del préstamo:</label>
+            <input type="number" id="monto" placeholder="Ej. 10000" required>
+            
+            <label for="interes">Tasa de interés (%):</label>
+            <input type="number" id="interes" placeholder="Ej. 5" required>
+            
+            <label for="años">Plazo (años):</label>
+            <input type="number" id="años" placeholder="Ej. 10" required>
+            
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+    
+</body>
+</html>
