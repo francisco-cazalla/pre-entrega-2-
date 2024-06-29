@@ -71,21 +71,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('formulario-prestamo').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Capturar valores del formulario
+        
         const monto = parseFloat(document.getElementById('monto').value);
         const interes = parseFloat(document.getElementById('interes').value);
         const años = parseFloat(document.getElementById('años').value);
         
-        // Validar que los valores sean números válidos
+        
         if (isNaN(monto) || isNaN(interes) || isNaN(años) || monto <= 0 || interes <= 0 || años <= 0) {
             alert('Por favor, ingresa valores válidos y mayores a cero');
             return;
         }
         
-        // Calcular pago mensual
+        
         const pagoMensual = calcularPagoMensual(monto, interes, años);
         
-        // Mostrar resultados en una alerta
+        
         alert(`
             Resultados:
             Monto del préstamo: $${monto.toFixed()} pesos
@@ -163,6 +163,93 @@ function marcarTareaComoCompletada(indice) {
     }
 }
 
+
+
+function guardarEstudiante(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const edad = document.getElementById('edad').value;
+    const profesion = document.getElementById('profesion').value;
+    const ubicacion = document.getElementById('ubicacion').value;
+    
+    const estudiante = {
+        nombre: nombre,
+        apellido: apellido,
+        edad: edad,
+        profesion: profesion,
+        ubicacion: ubicacion
+    };
+    
+    let estudiantes = JSON.parse(localStorage.getItem('estudiantes')) || [];
+    
+    estudiantes.push(estudiante);
+    
+    localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
+    
+    document.getElementById('formulario-estudiantes').reset();
+    
+    mostrarEstudiantes();
+}
+
+
+function mostrarEstudiantes() {
+    const listaEstudiantes = document.getElementById('lista-estudiantes');
+    listaEstudiantes.innerHTML = '';
+    
+    let estudiantes = JSON.parse(localStorage.getItem('estudiantes')) || [];
+    
+    estudiantes.forEach((estudiante, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = estudiante.nombre + ' ' + estudiante.apellido;
+        
+        listItem.addEventListener('click', () => {
+            alert(JSON.stringify(estudiante, null, 2)); 
+        });
+        listaEstudiantes.appendChild(listItem);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarEstudiantes(); 
+    
+    document.getElementById('formulario-estudiantes').addEventListener('submit', guardarEstudiante);
+});
+
+
+function mostrarEstudiantes() {
+    const listaEstudiantes = document.getElementById('lista-estudiantes');
+    listaEstudiantes.innerHTML = '';
+    
+    let estudiantes = JSON.parse(localStorage.getItem('estudiantes')) || [];
+    
+    estudiantes.forEach((estudiante, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = estudiante.nombre + ' ' + estudiante.apellido;
+        listItem.className = 'estudiante-item'; 
+        
+        
+        const infoContainer = document.createElement('div');
+        infoContainer.className = 'info-container';
+        infoContainer.innerHTML = `
+            <p><strong>Nombre:</strong> ${estudiante.nombre} ${estudiante.apellido}</p>
+            <p><strong>Edad:</strong> ${estudiante.edad}</p>
+            <p><strong>Profesión:</strong> ${estudiante.profesion}</p>
+            <p><strong>Ubicación:</strong> ${estudiante.ubicacion}</p>
+        `;
+        infoContainer.style.display = 'none'; 
+        
+        listItem.addEventListener('click', () => {
+            
+            infoContainer.style.display = infoContainer.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        listItem.appendChild(infoContainer);
+        listaEstudiantes.appendChild(listItem);
+    });
+}
 
 
 
